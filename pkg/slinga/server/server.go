@@ -2,8 +2,8 @@ package server
 
 import (
 	"fmt"
-	"github.com/Aptomi/aptomi/pkg/slinga/engine"
 	. "github.com/Aptomi/aptomi/pkg/slinga/db"
+	"github.com/Aptomi/aptomi/pkg/slinga/engine"
 	. "github.com/Aptomi/aptomi/pkg/slinga/language"
 	"github.com/Aptomi/aptomi/pkg/slinga/server/visibility"
 	"github.com/gorilla/handlers"
@@ -121,8 +121,8 @@ func Serve(host string, port int) {
 	srv := &http.Server{
 		Handler:      h,
 		Addr:         listenAddr,
-		WriteTimeout: 5 * time.Second,
-		ReadTimeout:  30 * time.Second,
+		WriteTimeout: 60 * time.Second,
+		ReadTimeout:  120 * time.Second,
 	}
 
 	panic(srv.ListenAndServe())
